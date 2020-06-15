@@ -1,0 +1,7 @@
+table {
+  width: 100%;
+}
+.table-data {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
