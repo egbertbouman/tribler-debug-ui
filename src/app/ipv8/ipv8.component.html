@@ -1,17 +1,9 @@
-<mat-tab-group animationDuration="0ms">
-  <mat-tab label="General">
-    <ng-template matTabContent>
-      <app-ipv8-stats></app-ipv8-stats>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Overlays">
-    <ng-template matTabContent>
-      <app-overlays></app-overlays>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Details">
-    <ng-template matTabContent>
-      <app-overlay-stats></app-overlay-stats>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+<nav mat-tab-nav-bar mat-align-tabs="left">
+  <a mat-tab-link
+     *ngFor="let l of navLinks"
+     [routerLink]="rootUrl + l.link"
+     [active]="this.router.url === rootUrl + l.link">
+    {{l.name}}
+  </a>
+</nav>
+<router-outlet></router-outlet>

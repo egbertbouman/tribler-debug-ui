@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-libtorrent',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibtorrentComponent implements OnInit {
 
-  constructor() { }
+  rootUrl = '/libtorrent';
+  navLinks = [{ name: 'Settings', link: '/settings' },
+              { name: 'Session', link: '/session' }];
+
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }

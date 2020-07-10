@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, timer } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from './login/login.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,25 +12,17 @@ export class TriblerService {
   events = [];
   dialogRef = undefined;
 
-  constructor(private dialog: MatDialog,
-              private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {
     const source = new EventSource(this.REST_API_SERVER + '/events');
     source.addEventListener('message', message => {
         const event = JSON.parse(message.data);
         event.time = Math.round(Date.now() / 1000);
         this.events.push(event);
     });
-
-    const self = this;
-    source.onerror = (err) => {
-      if (err) { self.showLoginDialog(); }
-    };
   }
 
-  public showLoginDialog() {
-    if (this.dialogRef !== undefined) { return; }
-    this.dialogRef = this.dialog.open(LoginComponent);
-    this.dialogRef.afterClosed().subscribe(() => { this.dialogRef = undefined; });
+  public getState(){
+    return this.httpClient.get(this.REST_API_SERVER + '/state');
   }
 
   public getDownloads(){

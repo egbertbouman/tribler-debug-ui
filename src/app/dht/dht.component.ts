@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dht',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DHTComponent implements OnInit {
 
-  constructor() { }
+  rootUrl = '/dht';
+  navLinks = [{ name: 'General', link: '/dht-stats' },
+              { name: 'Buckets', link: '/buckets' },
+              { name: 'Request', link: '/request' }];
+
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }

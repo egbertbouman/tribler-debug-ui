@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-asyncio',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsyncioComponent implements OnInit {
 
-  constructor() { }
+  rootUrl = '/asyncio';
+  navLinks = [{ name: 'Drift', link: '/drift' },
+              { name: 'All tasks', link: '/all-tasks' },
+              { name: 'Slow tasks', link: '/slow-tasks' }];
 
-  ngOnInit(): void {
+  constructor(public router: Router) {
   }
 
+   ngOnInit(): void {
+  }
 }
