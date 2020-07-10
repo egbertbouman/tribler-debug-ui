@@ -15,7 +15,7 @@ export class SwarmsComponent implements OnInit, OnDestroy {
              {key: 'num_connections', name: '#Connections'},
              {key: 'num_connections_incomplete', name: '#Pending'},
              {key: 'seeding', name: 'Seeding?'},
-             {key: 'last_lookup', name: 'Last lookup', transform: Utils.formatTime},
+             {key: 'last_lookup', name: 'Last lookup', transform: Utils.formatTimeDiff},
              {key: 'bytes_up', name: 'Upload', transform: Utils.formatBytes},
              {key: 'bytes_down', name: 'Download', transform: Utils.formatBytes}];
   data = [];

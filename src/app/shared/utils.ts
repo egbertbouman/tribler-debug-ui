@@ -5,10 +5,12 @@ export default class Utils {
     return (bytes / Math.pow(1024, e)).toFixed(2) + ' ' + ' KMGTP'.charAt(e) + 'B';
   }
   static formatTimeDiff(time: number) {
+    if (time === 0) { return '-'; }
     const now = Date.now() / 1000;
     return Utils.formatTime(now - time);
   }
   static formatTime(time: number) {
+    if (time === 0) { return '-'; }
     const date = new Date(0);
     date.setSeconds(time);
     return date.toISOString().substr(11, 8);
@@ -16,11 +18,12 @@ export default class Utils {
   static formatFlags(flags: [number]) {
     const flagToString = {1: 'RELAY',
                           2: 'EXIT_ANY',
-                          4: 'EXIT_IPV8'};
+                          4: 'EXIT_IPV8',
+                          32768: 'EXIT_HTTP'};
     let result = '';
     let flag;
     for (flag of flags) {
-      result = result + flagToString[flag] + ' ';
+      result = result + (flagToString[flag] || flag) + ' ';
     }
     return result;
   }

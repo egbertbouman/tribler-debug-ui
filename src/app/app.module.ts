@@ -17,10 +17,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { CookieService } from 'ngx-cookie-service';
 import { ChartsModule } from 'ng2-charts';
 import { GaugeModule } from 'angular-gauge';
 
 import { TableComponent } from './shared/table.component';
+
+import { LoginComponent } from './login/login.component';
 
 import { TriblerStatsComponent } from './tribler/tribler-stats.component';
 
@@ -72,6 +77,8 @@ import { LogsComponent } from './logs/logs.component';
 
     TableComponent,
 
+    LoginComponent,
+
     TriblerStatsComponent,
 
     TrustchainStatsComponent,
@@ -112,7 +119,7 @@ import { LogsComponent } from './logs/logs.component';
     SessionComponent,
     SettingsComponent,
 
-    LogsComponent
+    LogsComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,10 +137,11 @@ import { LogsComponent } from './logs/logs.component';
     MatSelectModule,
     MatInputModule,
     MatSlideToggleModule,
+    MatDialogModule,
     ChartsModule,
     GaugeModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

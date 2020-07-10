@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -9,84 +8,82 @@ import { map } from 'rxjs/operators';
 export class IPV8Service {
 
   private REST_API_SERVER = '/ipv8';
-  private opts = {};
 
-  constructor(private router: Router, private httpClient: HttpClient) {
-    this.opts = {headers: {'X-Api-Key': router.routerState.snapshot.root.queryParams.apikey}};
+  constructor(private httpClient: HttpClient) {
   }
 
   public enableDrift(enable: boolean){
-    return this.httpClient.put(this.REST_API_SERVER + '/asyncio/drift', {enable}, this.opts)
+    return this.httpClient.put(this.REST_API_SERVER + '/asyncio/drift', {enable})
       .pipe(map((res: any) => res.success));
   }
 
   public getDrift(){
-    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/drift', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/drift')
       .pipe(map((res: any) => res.measurements));
   }
 
   public getTasks(){
-    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/tasks', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/tasks')
       .pipe(map((res: any) => res.tasks));
   }
 
   public setAsyncioDebug(params){
-    return this.httpClient.put(this.REST_API_SERVER + '/asyncio/debug', params, this.opts)
+    return this.httpClient.put(this.REST_API_SERVER + '/asyncio/debug', params)
       .pipe(map((res: any) => res.success));
   }
 
   public getAsyncioDebug(){
-    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/debug', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/asyncio/debug')
       .pipe(map((res: any) => res));
   }
 
   public getOverlays(){
-    return this.httpClient.get(this.REST_API_SERVER + '/overlays', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/overlays')
       .pipe(map((res: any) => res.overlays));
   }
 
   public getOverlayStatistics(){
-    return this.httpClient.get(this.REST_API_SERVER + '/overlays/statistics', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/overlays/statistics')
       .pipe(map((res: any) => res.statistics));
   }
 
   public getPeers(){
-    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/peers', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/peers')
       .pipe(map((res: any) => res.peers));
   }
 
   public getCircuits(){
-    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/circuits', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/circuits')
       .pipe(map((res: any) => res.circuits));
   }
 
   public getRelays(){
-    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/relays', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/relays')
       .pipe(map((res: any) => res.relays));
   }
 
   public getExits(){
-    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/exits', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/exits')
       .pipe(map((res: any) => res.exits));
   }
 
   public getSwarms(){
-    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/swarms', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/tunnel/swarms')
       .pipe(map((res: any) => res.swarms));
   }
 
   public getDHTStatistics(){
-    return this.httpClient.get(this.REST_API_SERVER + '/dht/statistics', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/dht/statistics')
       .pipe(map((res: any) => res.statistics));
   }
 
   public getBuckets(){
-    return this.httpClient.get(this.REST_API_SERVER + '/dht/buckets', this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + '/dht/buckets')
       .pipe(map((res: any) => res.buckets));
   }
 
   public lookupDHTValue(hash){
-    return this.httpClient.get(this.REST_API_SERVER + `/dht/values/${hash}`, this.opts)
+    return this.httpClient.get(this.REST_API_SERVER + `/dht/values/${hash}`)
       .pipe(map((res: any) => res));
   }
 }

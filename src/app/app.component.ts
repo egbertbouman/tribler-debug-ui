@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { TriblerService } from './tribler.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,9 @@ export class AppComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private triblerService: TriblerService, private breakpointObserver: BreakpointObserver) {}
 
+  login() {
+    this.triblerService.showLoginDialog();
+  }
 }
