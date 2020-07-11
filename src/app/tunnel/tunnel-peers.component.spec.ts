@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { PeersComponent } from './peers.component';
+import { TunnelPeersComponent } from './tunnel-peers.component';
 
-describe('PeersComponent', () => {
-  let component: PeersComponent;
-  let fixture: ComponentFixture<PeersComponent>;
+describe('TunnelPeersComponent', () => {
+  let component: TunnelPeersComponent;
+  let fixture: ComponentFixture<TunnelPeersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      declarations: [ PeersComponent ]
+      declarations: [ TunnelPeersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PeersComponent);
+    fixture = TestBed.createComponent(TunnelPeersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

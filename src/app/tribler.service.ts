@@ -35,8 +35,8 @@ export class TriblerService {
       .pipe(map((res: any) => res.tribler_statistics));
   }
 
-  public getTrustchainStatistics(){
-    return this.httpClient.get(this.REST_API_SERVER + '/trustchain/statistics')
+  public getBandwidthStatistics(){
+    return this.httpClient.get(this.REST_API_SERVER + '/bandwidth/statistics')
       .pipe(map((res: any) => res.statistics));
   }
 

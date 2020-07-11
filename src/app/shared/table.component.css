@@ -5,3 +5,9 @@ table {
   white-space: pre-wrap;
   word-break: break-all;
 }
+.hoverable:hover {
+  background-color: #f8f8f8;
+}
+.selected {
+  background-color: #f8f8f8;
+}

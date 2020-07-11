@@ -29,7 +29,7 @@ import { LoginComponent } from './login/login.component';
 
 import { TriblerStatsComponent } from './tribler/tribler-stats.component';
 
-import { TrustchainStatsComponent } from './trustchain/trustchain-stats.component';
+import { BandwidthStatsComponent } from './bandwidth/bandwidth-stats.component';
 
 import { AsyncioComponent } from './asyncio/asyncio.component';
 import { DriftComponent } from './asyncio/drift.component';
@@ -39,6 +39,7 @@ import { SlowTasksComponent } from './asyncio/slow-tasks.component';
 import { Ipv8Component } from './ipv8/ipv8.component';
 import { IPv8StatsComponent } from './ipv8/ipv8-stats.component';
 import { OverlaysComponent } from './ipv8/overlays.component';
+import { OverlayPeersComponent } from './ipv8/overlay-peers.component';
 import { OverlayStatsComponent } from './ipv8/overlay-stats.component';
 
 import { TunnelsComponent } from './tunnel/tunnels.component';
@@ -46,7 +47,7 @@ import { CircuitsComponent } from './tunnel/circuits.component';
 import { RelaysComponent } from './tunnel/relays.component';
 import { ExitsComponent } from './tunnel/exits.component';
 import { SwarmsComponent } from './tunnel/swarms.component';
-import { PeersComponent } from './tunnel/peers.component';
+import { TunnelPeersComponent } from './tunnel/tunnel-peers.component';
 
 import { DHTComponent } from './dht/dht.component';
 import { DHTStatsComponent } from './dht/dht-stats.component';
@@ -81,7 +82,7 @@ import { LogsComponent } from './logs/logs.component';
 
     TriblerStatsComponent,
 
-    TrustchainStatsComponent,
+    BandwidthStatsComponent,
 
     AsyncioComponent,
     DriftComponent,
@@ -91,6 +92,7 @@ import { LogsComponent } from './logs/logs.component';
     Ipv8Component,
     IPv8StatsComponent,
     OverlaysComponent,
+    OverlayPeersComponent,
     OverlayStatsComponent,
 
     TunnelsComponent,
@@ -98,7 +100,7 @@ import { LogsComponent } from './logs/logs.component';
     RelaysComponent,
     ExitsComponent,
     SwarmsComponent,
-    PeersComponent,
+    TunnelPeersComponent,
 
     DHTComponent,
     DHTStatsComponent,

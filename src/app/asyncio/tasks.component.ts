@@ -10,7 +10,7 @@ import Utils from '../shared/utils';
 })
 export class TasksComponent implements OnInit, OnDestroy {
 
-  columns = [{key: 'taskmanager', name: 'TaskManager class', width: '200px'},
+  columns = [{key: 'taskmanager', name: 'TaskManager class', width: '220px'},
              {key: 'name', name: 'Name', track: true},
              {key: 'running', name: 'Running?', width: '85px'},
              {key: 'interval', name: 'Interval', width: '85px'},

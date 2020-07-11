@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TriblerStatsComponent } from './tribler/tribler-stats.component';
 
-import { TrustchainStatsComponent } from './trustchain/trustchain-stats.component';
+import { BandwidthStatsComponent } from './bandwidth/bandwidth-stats.component';
 
 import { AsyncioComponent } from './asyncio/asyncio.component';
 import { TasksComponent } from './asyncio/tasks.component';
@@ -19,8 +19,8 @@ import { TunnelsComponent } from './tunnel/tunnels.component';
 import { CircuitsComponent } from './tunnel/circuits.component';
 import { RelaysComponent } from './tunnel/relays.component';
 import { ExitsComponent } from './tunnel/exits.component';
-import { PeersComponent } from './tunnel/peers.component';
 import { SwarmsComponent } from './tunnel/swarms.component';
+import { TunnelPeersComponent } from './tunnel/tunnel-peers.component';
 
 import { DHTComponent } from './dht/dht.component';
 import { DHTStatsComponent } from './dht/dht-stats.component';
@@ -46,7 +46,7 @@ import { LogsComponent } from './logs/logs.component';
 const routes: Routes = [
   { path: '', redirectTo: 'tribler', pathMatch: 'full'},
   { path: 'tribler', component: TriblerStatsComponent },
-  { path: 'trustchain', component: TrustchainStatsComponent },
+  { path: 'bandwidth', component: BandwidthStatsComponent },
   {
     path: 'asyncio',
     component: AsyncioComponent,
@@ -75,8 +75,8 @@ const routes: Routes = [
       { path: 'circuits', pathMatch: 'full', component: CircuitsComponent },
       { path: 'relays', pathMatch: 'full', component: RelaysComponent },
       { path: 'exits', pathMatch: 'full', component: ExitsComponent },
+      { path: 'peers', pathMatch: 'full', component: TunnelPeersComponent },
       { path: 'swarms', pathMatch: 'full', component: SwarmsComponent },
-      { path: 'peers', pathMatch: 'full', component: PeersComponent },
     ]
   },
   {

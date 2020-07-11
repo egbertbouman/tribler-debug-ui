@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { TrustchainStatsComponent } from './trustchain-stats.component';
+import { OverlayPeersComponent } from './overlay-peers.component';
 
-describe('TrustchainStatsComponent', () => {
-  let component: TrustchainStatsComponent;
-  let fixture: ComponentFixture<TrustchainStatsComponent>;
+describe('OverlayPeersComponent', () => {
+  let component: OverlayPeersComponent;
+  let fixture: ComponentFixture<OverlayPeersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      declarations: [ TrustchainStatsComponent ]
+      declarations: [ OverlayPeersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrustchainStatsComponent);
+    fixture = TestBed.createComponent(OverlayPeersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

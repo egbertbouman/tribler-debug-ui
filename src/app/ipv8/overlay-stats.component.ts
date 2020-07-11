@@ -50,7 +50,7 @@ export class OverlayStatsComponent implements OnInit, OnDestroy {
   chartPaused = false;
 
 
-  columns = [{key: 'overlay_name', name: 'Overlay', width: '200px'},
+  columns = [{key: 'overlay_name', name: 'Overlay', width: '220px'},
              {key: 'message_name', name: 'Message'},
              {key: 'bytes_up', name: 'Upload', transform: Utils.formatBytes},
              {key: 'bytes_down', name: 'Download', transform: Utils.formatBytes},

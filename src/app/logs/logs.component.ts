@@ -14,7 +14,7 @@ import { TriblerService } from '../tribler.service';
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-card style="margin:15px">{{content}}</mat-card>
+    <mat-card style="margin:15px;white-space:pre-wrap;">{{content}}</mat-card>
   `
 })
 export class LogsComponent implements OnInit, OnDestroy {

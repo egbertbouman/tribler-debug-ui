@@ -11,6 +11,7 @@ import Utils from '../shared/utils';
 export class BucketsComponent implements OnInit, OnDestroy {
 
   columns = [{key: 'prefix', name: 'Prefix', track: true},
+             {key: 'endpoint', name: 'Type'},
              {key: 'last_changed', name: 'Last changed', transform: Utils.formatTimeDiff},
              {key: 'peers', name: '#Peers', transform(v) {return v.length; }}];
   data = [];

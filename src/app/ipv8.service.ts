@@ -47,7 +47,7 @@ export class IPV8Service {
       .pipe(map((res: any) => res.statistics));
   }
 
-  public getPeers(){
+  public getTunnelPeers(){
     return this.httpClient.get(this.REST_API_SERVER + '/tunnel/peers')
       .pipe(map((res: any) => res.peers));
   }

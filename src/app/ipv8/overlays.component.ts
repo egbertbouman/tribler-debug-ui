@@ -6,7 +6,13 @@ import Utils from '../shared/utils';
 
 @Component({
   selector: 'app-overlays',
-  template: '<app-table [columns]="columns" [data]="data"></app-table>',
+  template: `
+    <app-table hoverable="true" [columns]="columns" [data]="data" (rowClick)="onRowClicked($event)"></app-table>
+    <div *ngIf="selectedOverlay" style="margin-left:16px; margin-top:20px;">
+      <div>Peers that are in {{ selectedOverlay.overlay_name }}:</div>
+    </div>
+    <app-overlay-peers *ngIf="selectedOverlay" [id]="selectedOverlay?.id"></app-overlay-peers>
+  `,
   styles: [':host /deep/ .green { color: #56F129 !important; }',
            ':host /deep/ .orange { color: #F4D03F; }',
            ':host /deep/ .red { color: #F12929; }']
@@ -23,6 +29,7 @@ export class OverlaysComponent implements OnInit, OnDestroy {
              {key: 'statistics.num_down', name: '#Msgs received'},
              {key: 'statistics.diff_time', name: 'Diff (sec)', transform: Utils.formatTime}];
   data = [];
+  selectedOverlay;
 
   private subscription: Subscription;
 
@@ -37,6 +44,14 @@ export class OverlaysComponent implements OnInit, OnDestroy {
       ))
       .subscribe(data => {
         this.data = data;
+
+        let entry;
+        for (entry of data) {
+          if (entry.id === this.selectedOverlay?.id) {
+            this.selectedOverlay = entry;
+            this.selectedOverlay.selected = true;
+          }
+        }
       });
   }
 
@@ -53,6 +68,19 @@ export class OverlaysComponent implements OnInit, OnDestroy {
     }
    const color = peers.length < limits[0] ? 'orange' : (peers.length < limits[1] ? 'green' : 'red');
    return '<div class="' + color + '">' + peers.length + '</div>';
+  }
+
+  onRowClicked(overlay) {
+    if (this.selectedOverlay) {
+      this.selectedOverlay.selected = false;
+    }
+    if (this.selectedOverlay !== overlay) {
+      this.selectedOverlay = overlay;
+      this.selectedOverlay.selected = true;
+    }
+    else {
+      this.selectedOverlay = undefined;
+    }
   }
 
   ngOnDestroy() {

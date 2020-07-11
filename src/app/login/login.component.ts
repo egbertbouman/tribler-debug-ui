@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   save() {
-    this.cookieService.set('api_key', this.apiKey, 365, '/', null, false, 'Strict');
+    this.cookieService.set('api_key', this.apiKey, 365, '/', null, false, 'Lax');
     this.dialogRef.close();
     window.location.reload(true); // tslint:disable-line
   }

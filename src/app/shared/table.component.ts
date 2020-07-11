@@ -1,5 +1,6 @@
-import { Component, OnChanges, Input, ViewChild } from '@angular/core';
+import { Component, OnChanges, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatTable } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-table',
@@ -11,6 +12,8 @@ export class TableComponent implements OnChanges  {
   @Input() columns: any[] = [];
   @Input() data: [] = [];
   @Input() undefinedStr = 'N/A';
+  @Input() hoverable = false;
+  @Output() rowClick = new EventEmitter();
   displayedColumns = [];
   sortedData = [];
   sort;
@@ -73,5 +76,9 @@ export class TableComponent implements OnChanges  {
 
   isBoolean(value) {
     return typeof value === 'boolean';
+  }
+
+  onRowClicked(row) {
+    this.rowClick.emit(row);
   }
 }

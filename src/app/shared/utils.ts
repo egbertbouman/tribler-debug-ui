@@ -1,3 +1,5 @@
+declare var sha1: any;
+
 export default class Utils {
   static formatBytes(bytes: number) {
     if (bytes === 0) { return '0.00 B'; }
@@ -19,6 +21,7 @@ export default class Utils {
     const flagToString = {1: 'RELAY',
                           2: 'EXIT_ANY',
                           4: 'EXIT_IPV8',
+                          8: 'SPEEDTEST',
                           32768: 'EXIT_HTTP'};
     let result = '';
     let flag;
@@ -53,5 +56,13 @@ export default class Utils {
   }
   static prettyJSON(obj) {
     return JSON.stringify(obj, null, '  ');
+  }
+  static publicKeyToMidArray(pkHex: string) {
+    const pkArr = pkHex.match(/\w{2}/g).map((a) => parseInt(a, 16));
+    return sha1(pkArr).match(/\w{2}/g).map((a) => parseInt(a, 16));
+  }
+  static publicKeyToMid(pkHex: string): string {
+    const midArr = Utils.publicKeyToMidArray(pkHex);
+    return Array.from(midArr, (byte: any) => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join('');
   }
 }
