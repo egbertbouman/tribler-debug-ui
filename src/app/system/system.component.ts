@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-system',
-  templateUrl: './system.component.html',
-  styleUrls: ['./system.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class SystemComponent implements OnInit {
 

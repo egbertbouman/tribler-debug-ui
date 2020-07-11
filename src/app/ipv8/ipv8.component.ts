@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ipv8',
-  templateUrl: './ipv8.component.html',
-  styleUrls: ['./ipv8.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class Ipv8Component implements OnInit {
 

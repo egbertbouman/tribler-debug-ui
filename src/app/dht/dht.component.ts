@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dht',
-  templateUrl: './dht.component.html',
-  styleUrls: ['./dht.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class DHTComponent implements OnInit {
 

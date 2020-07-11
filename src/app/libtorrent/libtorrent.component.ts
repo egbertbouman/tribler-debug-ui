@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-libtorrent',
-  templateUrl: './libtorrent.component.html',
-  styleUrls: ['./libtorrent.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class LibtorrentComponent implements OnInit {
 

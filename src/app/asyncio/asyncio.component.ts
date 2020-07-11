@@ -3,8 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-asyncio',
-  templateUrl: './asyncio.component.html',
-  styleUrls: ['./asyncio.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class AsyncioComponent implements OnInit {
 

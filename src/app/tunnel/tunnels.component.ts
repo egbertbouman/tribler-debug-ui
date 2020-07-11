@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tunnels',
-  templateUrl: './tunnels.component.html',
-  styleUrls: ['./tunnels.component.css']
+  templateUrl: './../shared/tabs.html'
 })
 export class TunnelsComponent implements OnInit {
 
