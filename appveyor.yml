@@ -8,7 +8,7 @@ environment:
   USER:
     secure: y/JTG30ACk7z4Mfowp/PrA==
   PASS:
-    secure: isX2igm46qOUBAXSHbz8S8ZEGv1IQMtBXBxyEclfR+U=
+    secure: gahsANd0ojRUSqBfIkNVxKL94Jo2mf3MMCDYrLj7N1A=
 
 install:
   - ps: Install-Product node $env:nodejs_version
@@ -34,10 +34,11 @@ artifacts:
 
 deploy_script:
   - ps: |
-      if($env:APPVEYOR_REPO_TAG -eq 'true') {
+      #if ($env:APPVEYOR_REPO_TAG -eq 'true') {
+      if ($true) {
         Write-Output ("Deploying " + $env:APPVEYOR_REPO_TAG_NAME + " to PyPI...")
         Invoke-Expression "python -m pip install twine"
-        Invoke-Expression "python -m twine upload --repository testpypi -u ${Env:USER} -p ${Env:PASS} --skip-existing dist/*.whl"
+        Invoke-Expression "python -m twine upload -u ${Env:USER} -p ${Env:PASS} --skip-existing dist/*.whl"
       } else {
         Write-Output "No tag for deployment"
       }
