@@ -39,7 +39,6 @@ import { SlowTasksComponent } from './asyncio/slow-tasks.component';
 import { Ipv8Component } from './ipv8/ipv8.component';
 import { IPv8StatsComponent } from './ipv8/ipv8-stats.component';
 import { OverlaysComponent } from './ipv8/overlays.component';
-import { OverlayPeersComponent } from './ipv8/overlay-peers.component';
 import { OverlayStatsComponent } from './ipv8/overlay-stats.component';
 
 import { TunnelsComponent } from './tunnel/tunnels.component';
@@ -92,7 +91,6 @@ import { LogsComponent } from './logs/logs.component';
     Ipv8Component,
     IPv8StatsComponent,
     OverlaysComponent,
-    OverlayPeersComponent,
     OverlayStatsComponent,
 
     TunnelsComponent,
