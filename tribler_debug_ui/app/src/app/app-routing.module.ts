@@ -15,6 +15,8 @@ import { IPv8StatsComponent } from './ipv8/ipv8-stats.component';
 import { OverlaysComponent } from './ipv8/overlays.component';
 import { OverlayStatsComponent } from './ipv8/overlay-stats.component';
 
+import { DownloadsComponent } from './downloads/downloads.component';
+
 import { TunnelsComponent } from './tunnel/tunnels.component';
 import { CircuitsComponent } from './tunnel/circuits.component';
 import { RelaysComponent } from './tunnel/relays.component';
@@ -66,6 +68,10 @@ const routes: Routes = [
       { path: 'overlays', pathMatch: 'full', component: OverlaysComponent },
       { path: 'overlay-stats', pathMatch: 'full', component: OverlayStatsComponent },
     ]
+  },
+  {
+    path: 'downloads',
+    component: DownloadsComponent
   },
   {
     path: 'tunnel',

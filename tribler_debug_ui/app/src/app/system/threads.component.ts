@@ -9,7 +9,7 @@ import { TriblerService } from '../tribler.service';
 })
 export class ThreadsComponent implements OnInit, OnDestroy {
 
-  columns = [{key: 'thread_id', name: 'Thread ID', track: true, width: '100px'},
+  columns = [{key: 'thread_id', name: 'Thread ID', track: true, width: '125px'},
              {key: 'thread_name', name: 'Thread name', width: '200px'},
              {key: 'frames', name: 'Frames', transform(v) {return JSON.stringify(v, null, '  '); }}];
   data = [];
